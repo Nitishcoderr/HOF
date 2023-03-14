@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const item = {
+            "item1" : 2,
+            "item2" : 34,
+            "item3" : 54,
+            "item4" : 56
+        }
+        const exchangeRate = 80;
+
+        const convertedPrice = Object.entries(item).map(([name,price]) => {
+            const convertedPrice = price * exchangeRate;
+            return [name,convertedPrice];
+        })
+
+        const convertedItem = Object.fromEntries(convertedPrice);
+
+        console.log(convertedItem);
+    </script>
+</body>
+</html>

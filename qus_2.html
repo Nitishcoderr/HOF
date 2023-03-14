@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="start()">Start</button>
+  <p id="countdown"></p>
+  <p id="result"></p>
+
+  <script>
+    let delay = 3;
+    let countdown = document.getElementById("countdown")
+    let result = document.getElementById("result")
+
+    function start(){
+      let remaining = delay;
+      countdown.innerHTML = `Generating Randum number in ${remaining} sec..`
+      var intervalId = setInterval(function(){
+        remaining--;
+        countdown.innerHTML =`Generating Randum number in ${remaining} sec..`
+        if(remaining == 0){
+          clearInterval(intervalId);
+          var randomNumber = Math.floor(Math.random() * 100) +1 ;
+          result.innerHTML = `The randum number is ${randomNumber}`
+        }
+      },1000)
+
+    }
+  </script>
+</body>
+</html>
